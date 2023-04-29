@@ -1,4 +1,4 @@
-document.querySelector('.main_nav').addEventListener('click',function (e) {
+document.querySelector('.burger').addEventListener('click',function (e) {
 
       document.querySelector('.main_nav').classList.toggle('hidden');
       document.querySelector('.burger').classList.toggle('active');
