@@ -1,3 +1,6 @@
+
+
+/*styles common for all sizez*/
 :root{
       --bgc_top:#34435e;
       --bgc_btm:#002a32;
@@ -5,11 +8,12 @@
       --phone_txt:#b3af8f;
       --main_txt:#449dd1;
       --ff_main:'Inconsolata', monospace;
-      --burg_sz: 0.1rem 0.8rem;
+      --burg_h: 0.2rem;
+      --burg_w: 1.5rem;
 }
-/*styles common for all sizez*/
 
 
+/* normalize */
 *{
       scroll-behavior: smooth;
       box-sizing: border-box;
@@ -19,7 +23,7 @@
 }
 
 body{
-      background: linear-gradient(-45deg, var(--bgc_top),var(--bgc_btm));
+      background: linear-gradient(45deg, var(--bgc_btm),var(--bgc_top));
       font-family: var(--ff_main);
       color: var(--main_txt);
 }
@@ -31,10 +35,10 @@ h1,h2{
       margin-bottom: 1em;
 }
 
-.wrapper{
+.wrapper_main{
       container: main/inline-size;
-      width:90%;
       margin-inline: auto;
+      width: calc(min(90%,70rem));
 }
 
 .main_nav{
@@ -42,6 +46,11 @@ h1,h2{
       list-style: none;
 }
 
+
+
+.main_nav__item{
+
+}
 .main_nav__link{
       text-transform: uppercase;
       color:var(--h_txt);
@@ -50,55 +59,119 @@ h1,h2{
 }
 
 
-/*styles for dasktop*/
+
 
 
 
 /* styles for phone */
 @container main (width < 950px){ 
 
-      .hamburger{
-            display: flex;
+      /* hamburger menu */
+      .burger{
+            display:flex;
             justify-content: center;
-            align-items:center;
-      
-            position: absolute;
-            top:5rem;
-            right: 0;
-            cursor:pointer;
-      
-            padding: 1.5rem;
+            align-items: center;
+            z-index: 30;
 
+            height: 3rem;
+            width: 3rem;
+            margin-inline: 2rem;
       }
-      .hamburger_line{
+      .burger_line{
+            display:block;
+
             background-color: var(--main_txt);
             padding: var(--burg_sz);
             position:relative;
+            height: var(--burg_h);
+            Width: var(--burg_w);
       }
-      .hamburger_line:before, .hamburger_line:after{
+      .burger_line::before, 
+      .burger_line::after{
             content:"";
             background-color: var(--main_txt);
-            padding:var(--burg_sz);
+            height: var(--burg_h);
+            Width: var(--burg_w);
             position: absolute;
+            cursor: pointer;
+            transition: .3s cubic-bezier(.24,1.18,.55,-0.28);
       }
-      .hamburger_line:before{
-            top: -15px;
+      .burger_line::before{
+            transition: .1s linear;
+            top: -0.5em;
       }
-      .hamburger_line:after{
-            bottom: -15px;
+      .burger_line::after{
+            transition: .1s linear;
+            bottom: -0.5em;
       }
+
+      .burger.active .burger_line{
+            background-color: transparent;
+      }
+      .burger.active .burger_line::before {
+            transform: rotate(315deg);
+            transition: .3s linear;
+            top: 0;
+            background-color: red;
+      }
+      .burger.active .burger_line::after{
+            transform: rotate(-315deg);
+            transition: .3s linear;
+            bottom: 0;
+            background-color: red;
+      }
+
       .hidden{
             display:none;
       }
-      body.fixed {
+      .burger.active .main_nav{
+            position:absolute;
+            bottom:0;
+            width: 100lvw;
+            z-index:9999;
+            background-color: linear-gradient(var(--bg_top),var(--bg_btm));
+      }
+      .burger.active .main_nav{
+            display:flex;
+            flex-direction:column;
+            justify-content: space-around;
+            align-items: center;
+      }
+
+
+      .fixed{
             overflow: hidden;
+            background-color: red;
       }
       .logo{
             padding:0.7rem 1.2rem;
             border: 1px red solid;
             display: flex;
+            width: 100%;
             justify-content: center;
             margin-block: 1rem;
+      }
+      .header{
+            position: sticky;
+            top: 0;
+
+            background-color: var(--bgc_top);
+
+            z-index: 5;
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            border-bottom: 1px solid var(--bgc_btm);
+
+            width:100lvw;
+            transform: translateX(-5%);
+      }
+      .header_cnt{
+            display:flex;
+            justify-content: center;
+            align-items: space-around;
+            flex-direction:column;
+            flex:1;
       }
       .header_cnt__link{
             text-decoration: none;
@@ -109,15 +182,56 @@ h1,h2{
 
             font-weight: bold;
             text-transform: uppercase;
+
+            text-align:center;
+      }
+      .item-card__hdr{
+            margin-block: 1rem;
+            text-align:center;
+      }
+      .section_container:not(:first-child){
+            margin-top: 3rem;
+      }
+      .item-card__img{
+            display: block;
+            width: 3rem;
+            height: 4rem;
+            background: red;
+            margin-inline: auto;
+      }
+      .item-card__descr{
+            text-align: justify;
+            margin-inline: auto;
+            margin-bottom: 3rem;
+            display: block;
+      }
+      .main_nav:nth-child(2) > .main_nav__item{
+            border-bottom: 3px solid red /* var(--bgc_btm) */;
       }
 
+      .footer{
+            margin-bottom: 3rem;
+      }
+      .footer_smm{
+            display: flex;
+            justify-content: space-around;
 
+            margin-block: 1rem;
+      }
+      .footer_smm__link{
+            padding: 1rem;
+            background: #ffff;
+            color: var(--bgc_btm);
+      }
 }
 
 
 
-
+/*styles for desktop*/
 @container main (width > 950px){
+      .wrapper_main{
+            width:90%;
+      }
       .header{
             display: flex;
             justify-content: space-around;
@@ -223,7 +337,7 @@ h1,h2{
       }
 
       .sec_heading__slogan{
-            font-size: 10rem;
+            font-size:10rem;
             font-weight: 900;
             text-shadow: 
             7px 7px 10px #ffff,
