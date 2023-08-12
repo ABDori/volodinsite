@@ -1,12 +1,10 @@
-
-
 /*styles common for all sizez*/
 :root{
       --bgc_top:#34435e;
       --bgc_btm:#002a32;
       --h_txt:#766C7F;
       --phone_txt:#b3af8f;
-      --main_txt:#449dd1;
+      --main_txt:#21a2ec;
       --ff_main:'Inconsolata', monospace;
       --burg_h: 0.2rem;
       --burg_w: 1.5rem;
@@ -55,10 +53,25 @@ h1,h2{
       text-transform: uppercase;
       color:var(--h_txt);
       text-decoration:none;
-     
 }
 
+.sec_container__header{
+      font-size: 3em;
+      margin: auto;
+}
 
+.gmap{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:auto;
+      height: 90%;
+      width: 90%;
+}
+.footer_smm__link{
+      cursor:pointer;
+      border: 1px solid red;
+}
 
 
 
@@ -75,7 +88,8 @@ h1,h2{
 
             height: 3rem;
             width: 3rem;
-            margin-inline: 2rem;
+            margin-right: 1rem;
+            margin-left:auto;
       }
       .burger_line{
             display:block;
@@ -130,12 +144,15 @@ h1,h2{
             width: 100lvw;
             z-index:9999;
             background-color: linear-gradient(var(--bg_top),var(--bg_btm));
-      }
-      .burger.active .main_nav{
             display:flex;
             flex-direction:column;
             justify-content: space-around;
             align-items: center;
+
+            margin-inline: 3rem;
+      }
+      .burger.active .main_nav__item{
+            margin-left: 3rem;
       }
 
 
@@ -168,10 +185,10 @@ h1,h2{
       }
       .header_cnt{
             display:flex;
-            justify-content: center;
+            justify-content:left;
             align-items: space-around;
             flex-direction:column;
-            flex:1;
+            /* flex:1; */
       }
       .header_cnt__link{
             text-decoration: none;
@@ -192,6 +209,9 @@ h1,h2{
       .section_container:not(:first-child){
             margin-top: 3rem;
       }
+      .sec_container__header{
+            margin-bottom: 1em;
+      }
       .item-card__img{
             display: block;
             width: 3rem;
@@ -208,18 +228,29 @@ h1,h2{
       .main_nav:nth-child(2) > .main_nav__item{
             border-bottom: 3px solid red /* var(--bgc_btm) */;
       }
-
+      .sec_contacts__map{
+            height: 90%;
+            width: 90%;
+          /*   display: flex;
+            justify-content: center;
+            align-items: center; */
+            margin-block:1em;
+            margin-inline:auto;
+      }
+      .gmap{
+            display: block;
+      }
       .footer{
-            margin-bottom: 3rem;
+            padding-bottom: 3rem;
       }
       .footer_smm{
             display: flex;
             justify-content: space-around;
-
             margin-block: 1rem;
       }
       .footer_smm__link{
-            padding: 1rem;
+            display:flex;
+            padding: 2rem;
             background: #ffff;
             color: var(--bgc_btm);
       }
@@ -237,6 +268,7 @@ h1,h2{
             justify-content: space-around;
             align-items: center;
             margin-block: 2rem;
+            padding-bottom: 1rem;
             border-bottom: #131313 1px solid;
       }
       
@@ -279,12 +311,13 @@ h1,h2{
             border: 0.3rem solid var(--bgc_top);
       
             box-shadow: 5px #1b1a1a inset;
+            box-shadow: rgba(255,255,255,0.1) 0px 0px 2rem;
       }
       .main_nav__link:hover{
             background-color: var(--h_txt);
             color: var(--bgc_btm);
             transition: .25s 0.1s linear;
-      
+            box-shadow: rgba(255,255,255,0.8) 0px 0px 2rem;
       }
       
       
@@ -305,7 +338,7 @@ h1,h2{
       }
       .sec_par{
             width: max(5rem,80%);
-            margin-inline:auto;
+            margin:auto;
       }
       .item-card{
             display: flex;
@@ -348,44 +381,36 @@ h1,h2{
             font-size: 2rem;
             font-weight: 700;
 
+            color: var(--main_txt); 
             width: 80%;
             text-align: center;
 
             margin: auto;
+
+            background-color: rgba(200,200,200,0.9);
+            padding: 2rem;
+            border-radius: 2.5rem;
+      }
+      .footer{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+      }
+      .footer_smm__link{
+            padding:1rem;
+            color: white;
+            opacity: 0.3;
+            transition: 0.3s 0.3s linear;
+      }
+      .footer_smm__link:hover{
+            opacity:1;
+            transition: 0.2s 0.3s linear;
+            border-radius:0.8rem;
+            box-shadow: 0px 0px 20px #ffff;
+      }
+      .sec_prefer__slider{
+            border: 1px solid red;
+            background-color: rgba(255,255,255, 0.5);
       }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
