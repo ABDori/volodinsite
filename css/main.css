@@ -1,10 +1,15 @@
 /*styles common for all sizez*/
 :root{
-      --bgc_top:#34435e;
+      --bgc_top:#33A1FD;
+      --bgc_btm:#61E8E1;
+      --h_txt:#EAC435;
+      --phone_txt:#FE5F55;
+      --main_txt:#114B5F;
+/*       --bgc_top:#34435e;
       --bgc_btm:#002a32;
       --h_txt:#766C7F;
       --phone_txt:#b3af8f;
-      --main_txt:#21a2ec;
+      --main_txt:#21a2ec; */
       --ff_main:'Inconsolata', monospace;
       --burg_h: 0.2rem;
       --burg_w: 1.5rem;
@@ -17,6 +22,7 @@
       list-style-type: none;
       padding: 0;
       margin: 0;
+      font-weight: 650;
 }
 body{
       background: linear-gradient(45deg, var(--bgc_btm),var(--bgc_top));
@@ -53,22 +59,25 @@ h1,h2{
        align-items:center;
 
        cursor:pointer;
-}
-.button_hover:hover{
-      background-color: var(--h_txt);
-      color: var(--bgc_btm);
-      transition: .25s 0.1s linear;
-      box-shadow: rgba(255,255,255,0.8) 0px 0px 2rem;
-}
-.main_nav__item{
 
+       font-weight: bolder;
+
+      &:hover,
+      &:focus{
+            background-color: var(--h_txt);
+            color: var(--bgc_btm);
+            transition: .25s 0.1s linear;
+            box-shadow: rgba(255,255,255,0.8) 0px 0px 2rem;
+      }
 }
+/* .main_nav__item{
+} */
 .main_nav__link{
       text-transform: uppercase;
 }
 .sec_container__header{
       font-size: 3em;
-      margin: auto;
+      margin-inline: auto;
       transition: .2s .1s ease-in;
       opacity:1;
       border-bottom: 1px solid red;
@@ -385,7 +394,8 @@ h1,h2{
             width: 80%;
             text-align: center;
 
-            margin: auto;
+            margin-inline: auto;
+            margin-bottom: 1rem;
 
             background-color: rgba(200,200,200,0.9);
             padding: 2rem;
@@ -412,6 +422,7 @@ h1,h2{
             border: 1px solid red;
             background-color: rgba(255,255,255, 0.5);
             height: 10rem;
+            margin-block: 2rem;
       }
       .footer{
             display: flex;
@@ -424,20 +435,21 @@ h1,h2{
             justify-content: center;
             padding: 2rem;
             flex-wrap:wrap;
+            &@media (max-width<300px){
+                  flex-direction:column;
+            }     
       }
       .footer_smm__link{
             transition: 0.3s 0.3s linear;
             width: 4rem;
             height: 2.5em;
             margin:0.3rem;
+            &:hover{
+                  opacity:1;
+                  transition: 0.2s 0.3s linear;
+                  border-radius:0.8rem;
+                  box-shadow: 0px 0px 20px #ffff;
+            }
       }
-      .footer_smm__link:hover{
-            opacity:1;
-            transition: 0.2s 0.3s linear;
-            border-radius:0.8rem;
-            box-shadow: 0px 0px 20px #ffff;
-      }
-
-
 }
 
