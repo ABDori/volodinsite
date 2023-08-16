@@ -50,7 +50,9 @@ h1,h2{
       
       box-shadow: 5px #1b1a1a inset,
        rgba(255,255,255,0.5) 0px 0px 2rem;
-
+      
+      background-color: var(--main_txt);
+      
        color:var(--h_txt);
        text-decoration:none;
 
