@@ -354,7 +354,7 @@ h1,h2{
             text-align:justify;
       }
       .sec_heading{
-            background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
+            background: center / cover no-repeat url('./img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
       }
       .section_container.moved .sec_container__header{
