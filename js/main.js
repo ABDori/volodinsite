@@ -11,7 +11,7 @@ document.querySelector('.burger').addEventListener('click',function (e) {
 
 //intersection observer
 
-const observedSec = document.querySelectorAll('.section_container');
+const observedSec = document.querySelectorAll('.sec_container');
 const options = {
       root: null,
       threshold: 0.2,
