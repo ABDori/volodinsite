@@ -87,6 +87,30 @@ h1,h2{
             box-shadow: rgba(255,255,255,0.8) 0px 0px 5rem;
       }
 }
+.sec_service__detailblock{
+      display: flex;
+      justify-content: space-around;
+      align-items: start;
+      padding-block: 1rem;
+      color:var(--main_txt);
+      border-radius: 0.3rem;
+      border:1px solid var(--main_txt);
+      background-color: rgba(0,0,0,0.2);
+      cursor:pointer;
+      text-align:justify;
+      padding:1rem;
+      transition: .4s ease;
+}
+.sec_service__detailblock[open] .sec_service__detailsum{
+      border-bottom: 2px solid var(--main_txt);
+      margin-bottom:1rem;
+      transition: .4s ease;
+}
+.sec_service__detailsum{
+      color:var(--main_txt);
+
+      cursor:pointer;
+}
 .sec_prefer__slider{
       position:relative;
       display:flex;
