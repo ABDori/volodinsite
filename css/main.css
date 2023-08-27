@@ -10,7 +10,7 @@
       --h_txt:#766C7F;
       --phone_txt:#b3af8f;
       --main_txt:#21a2ec;
-      --accent_clr:#30F844;
+      --accent_clr:#47FEFE;
       --ff_main:'Inconsolata', monospace;
       --ff_hdr: 'Klee One', cursive;
       --burg_h: 0.2rem;
@@ -36,6 +36,7 @@ h1,h2{
       text-align: center;
       margin-bottom: 1em;
       font-family: var(--ff_hdr);
+      margin-top: 1em;
 }
 .logo{
       display:block;
@@ -47,6 +48,9 @@ h1,h2{
       justify-content: center;
       align-items:space-between;
       min-width:180px;
+}
+.cont_cont>*{
+      display:block;
 }
 .wrapper_main{
       container: main/inline-size;
@@ -73,7 +77,6 @@ h1,h2{
        align-items:center;
 
        cursor:pointer;
-
        font-weight: bolder;
 
       &:hover,
@@ -99,8 +102,9 @@ h1,h2{
 
       position:absolute;
       top:50%;
-      background-color: rgba(0,0,0,0.1);
+
       color:var(--h_txt);
+      background-color: rgba(255,255,255,0.1);
       border:0;
       border-radius:1rem;
 
@@ -111,6 +115,7 @@ h1,h2{
       height: 6em;
 
       transform:translateY(-3em);
+      transition:0.3s 0.1s ease;
 
       cursor:pointer;
       z-index:999;
@@ -124,16 +129,16 @@ h1,h2{
             right:0.5em;
       }
       &:hover{
-            transition:0.3s ease;
-            background-color: rgba(0,0,0,0.3);
+            transition:0.3s 0.1s ease;
+            background-color: rgba(255,255,255,0.3);
       }
       &.prev:hover{
-            left:1rem;
+            left:0.55rem;
             transition:0.3s 0.2s ease;
           
       }
       &.next:hover{
-            right:1rem;
+            right:0.55rem;
             transition:0.3s 0.2s ease;
       }
 
@@ -176,15 +181,16 @@ h1,h2{
       text-transform: uppercase;
 }
 .sec_container__header{
-      font-size: 3em;
-      transition: .2s .1s ease-in;
-      opacity:1;
-      background-color: rgba(0,0,0,0.2);
-      padding: 0.5rem 1.3rem;
-      border-radius: 3rem;
+      font-size: 3rem;
+      background:rgba(0,0,0,0.5);
+      width:max-content;
       margin-inline:auto;
-      margin-top: 3rem;
-      vertical-align: middle;
+      border-radius: 3rem;
+      padding:0.7rem 1.5rem;
+      color:var(--main_txt);
+
+      transition: .4s .3s ease-in;
+
 }
 .item_card{
       opacity:1;
@@ -203,9 +209,10 @@ h1,h2{
       background-color: rgba(0,0,0,0.2);
       padding: 1rem 1.5rem;
       width: 25ch;
-      min-height: 6rem;
+
       border-radius: 1rem;
       text-align:center;
+      vertical-align: middle;
 
 }
 .item_card__descr{
@@ -343,6 +350,7 @@ h1,h2{
             background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
             border-radius: 3rem;
+            height:25lvh;
       }
       .sec_heading__slogan{
             font-size: 3rem;
@@ -357,7 +365,7 @@ h1,h2{
             text-align: center;
 
             margin-inline: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
 
             background-color: rgba(200,200,200,0.9);
             padding: 1rem;
@@ -438,15 +446,14 @@ h1,h2{
             padding-bottom: 1rem;
             border-bottom: #131313 1px solid;
       }
-
       .cont__link{
-         text-aline:center;
-
             text-decoration: none;
             color: var(--phone_txt);
-            display: block;
             padding:0.5rem 1rem;
             font-size: 0.8rem;
+
+            display: flex;
+            justify-content: center;
             &:hover{
                   text-shadow:0px 0px 6px rgba(255,255,255,0.8);
             }
@@ -476,8 +483,6 @@ h1,h2{
             display:grid;
             grid-template-columns: repeat(3,1fr);
             justify-content: center;
-
-
       }
       .sec_par{
             width: max(5rem,80%);
@@ -485,9 +490,6 @@ h1,h2{
             margin-block: 1rem;
       }
       .item_card__img{
-            width: 4rem;
-            height: 6rem;
-            background: #ffff;
       }
       .item_card__hdr{
             display:block;
@@ -501,6 +503,11 @@ h1,h2{
             background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
             border-radius: 3rem;
+            height: 50lvh;
+            display: flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content: space-around;
       }
       .sec_container.moved .sec_container__header{
             translateY:-5em;
@@ -509,7 +516,7 @@ h1,h2{
             border-bottom: rgba(255,255,255,0.0);
       }
       .sec_heading__slogan{
-            font-size:6rem;
+            font-size:3rem;
             font-weight: 900;
             text-shadow: 
             1px 1px 15px rgba(255,255,255,0.7),
@@ -526,15 +533,12 @@ h1,h2{
       }
       .sec_heading__par{
             display:block;
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: 600;
 
             color: var(--main_txt); 
             width: 80%;
             text-align: center;
-
-            margin-inline: auto;
-            margin-bottom:3rem;
 
             background-color: rgba(200,200,200,0.9);
             padding: 2rem;
@@ -548,17 +552,32 @@ h1,h2{
             translateY:-2rem;
             opacity:0;
       }
+      .serv_img{
+            height: 7rem;
+      }
 
+
+      .sec_container.moved .cv_text__wrapper,
+      .sec_container.moved .cv_photo{
+            transition: translate .5s .3s ease-in, opasity .2s linear;
+            translateY:-2rem;
+            opacity:0;
+      }
       .sec_container.moved .sec_services__item{
             transition: translate .4s .1s ease-in, opasity .2s linear;
             translateY:-2rem;
             opacity:0;
       }
       .sec_prefer__slider{
-   /*          border: 10px solid red;
-            background-color: rgba(255,255,255, 0.5); */
             height: 40rem;
             margin-block: 2rem;
+      }
+      .sec_hardware__img{
+            height: 200px;
+
+            display:flex;
+            align-items: center;
+            justify-content: center;
       }
 
       .cv{
@@ -568,15 +587,20 @@ h1,h2{
             align-items:center;
             gap:1rem;
             margin-inline:auto;
+            max-width: 90%;
 
+            transition: .3s .4s ease-in;
             container:cv / inline-size;
       }
 
       .cv > .sec_container__header{
             grid-column: 1/3;
+ 
       }
       .cv_text__wrapper{
             margin:1rem 1.5rem;
+            transition:translate .4s .1s ease-in, opasity .2s linear;
+            opacity:1;
       }
       .cv_text{
             text-align:justify;
@@ -614,14 +638,13 @@ h1,h2{
       }
       @container footer_smm (width<320px){
             .footer_smm{flex-direction:column;}
-      };
+      }
       .footer_smm__link{
             transition: 0.3s 0.3s linear;
-            min-width: 4rem;
-            min-height: 2.5em;
-            margin:0.3rem;
+            width:3.5rem;
+            height: 2rem;
+            margin:0.1rem;
             &:hover{
-                  opacity:1;
                   transition: 0.2s 0.3s linear;
                   border-radius:0.8rem;
                   box-shadow: 0px 0px 20px #ffff;
