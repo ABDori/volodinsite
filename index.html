@@ -15,11 +15,10 @@
 
 
 
-<body>
-	<main class="wrapper_main">
+<body><main class="wrapper_main">
 
 		<header class="header" id="hdr">
-			<img class="logo" src="./img/LOGO.png"></img>
+			<img class="logo" src="../img/LOGO.png"></img>
 			
 			<div class="cont_cont">
 				<a href="tel: +7-911-111-11-11" class="cont__link" type="phone">+7-911-111-11-11</a>
@@ -42,7 +41,6 @@
 		</header>
 
 		<section class="sec_container sec_heading moved">
-		
 			<h1 class="sec_heading__slogan">Качественное решение сложных задач</h1>
 			<p class="sec_heading__par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facilis reprehenderit praesentium itaque iste ipsum, alias velit neque saepe sunt dolores accusamus, sed nemo ex. Consectetur praesentium inventore asperiores eveniet veritatis enim reprehenderit architecto sunt!</p>
 		</section>
@@ -53,17 +51,22 @@
 
 			<div class="sec_wrapper">
 				<div class="sec_services__item item_card">
-					<div class="sec_services__img item_card__img"></div>
+					<div class="sec_services__img item_card__img">
+						<img src="./img/serv_diag.png" class="serv_img item_card_icon"/></div>
 					<h3 class="sec_services__hdr item_card__hdr">Компьютерная диагностика</h3>
 					<p class="sec_services__descr item_card__descr">Сканирование всех систем автомобиля и мониторинг параметров в режиме реального времени datastream.</p>
 				</div>
 				<div class="sec_services__item item_card">
-					<div class="sec_services__img item_card__img"></div>
+					<div class="sec_services__img item_card__img">
+						<img src="./img/serv_electr.png" class="serv_img item_card_icon"/>
+					</div>
 					<h3 class="sec_services__hdr item_card__hdr">Ремонт автомобильной электроники</h3>
 					<p class="sec_services__descr item_card__descr">Поиск неисправности с устранением. Ремонт электропроводки электронных блоков автомобиля.</p>
 				</div>
 				<div class="sec_services__item item_card">
-					<div class="sec_services__img item_card__img"></div>
+					<div class="sec_services__img item_card__img">
+						<img src="./img/serv_engine.png" class="serv_img item_card_icon"/>
+					</div>
 					<h3 class="sec_services__hdr item_card__hdr">Запуск двигателя</h3>
 					<p class="sec_services__descr item_card__descr">Устранение неисправности запуска, отключение иммобилайзера.</p>
 				</div>
@@ -76,17 +79,23 @@
 			<h2 class="sec_container__header">Преимущества</h2>
 			<div class="sec_wrapper">
 				<div class="sec_prefer__item item_card">
-					<div class="sec_prefer__img item_card__img"></div>
+					<div class="sec_prefer__img item_card__img">
+						<img src="./img/exp.png" class="serv_img item_card_icon"/>
+					</div>
 					<h3 class="sec_prefer__hdr item_card__hdr">Более 23 лет опыта</h3>
 					<p class="sec_prefer__descr item_card__descr">Ремонт разных видов систем автомобильной электроники.</p>
 				</div>
 				<div class="sec_prefer__item item_card">
-					<div class="sec_prefer__img item_card__img"></div>
+					<div class="sec_prefer__img item_card__img">
+						<img src="./img/moving.png" class="serv_img item_card_icon"/>
+					</div>
 					<h3 class="sec_prefer__hdr item_card__hdr">Проведение работ на выезде</h3>
 					<p class="sec_prefer__descr item_card__descr">Оперативный выезд сотрудников в разные точки Москвы, Московской области и не только.</p>
 				</div>
 				<div class="sec_prefer__item item_card">
-					<div class="sec_prefer__img item_card__img"></div>
+					<div class="sec_prefer__img item_card__img">
+						<img src="./img/tools.png" class="serv_img item_card_icon"/>
+					</div>
 					<h3 class="sec_prefer__hdr item_card__hdr">Современные практики и оборудование</h3>
 					<p class="sec_prefer__descr item_card__descr">Ремонт электронных блоков управления, адаптация, клонирование.</p>
 				</div>
@@ -108,7 +117,13 @@
 
 
 			<div class="sec_prefer__slider" aria="slider">
-				<button class="prev slider_btn">Назад</button>
+				<button class="prev slider_btn"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+					<g>
+					  <path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
+					  <polygon points="12.707 8.707 11.293 7.293 6.586 12 11.293 16.707 12.707 15.293 10.414 13 16 13 16 11 10.414 11 12.707 8.707"/>
+					</g>
+				    </svg>
+				    </button>
 
 				
 				<img src="./img real/img0.jpg" alt="slider images" class="slider_img"/>
@@ -125,7 +140,12 @@
 				<img src="./img real/img11.jpg" alt="slider images" class="slider_img"/>
 
 
-				<button class="next slider_btn">Вперёд</button>
+				<button class="next slider_btn"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+					<g>
+					  <path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
+					  <polygon points="11.293 8.707 13.586 11 8 11 8 13 13.586 13 11.293 15.293 12.707 16.707 17.414 12 12.707 7.293 11.293 8.707"/>
+					</g>
+				    </svg></button>
 			</div>
 
 
@@ -148,17 +168,23 @@
 			<h2 class="sec_container__header">Оборудование</h2>
 			<div class="sec_wrapper">
 				<div class="sec_hardware__item item_card">
-					<div class="sec_hardware__img item_card__img"></div>
+					<div class="sec_hardware__img item_card__img">
+						<img src="./img/Scantronic.png" alt="Scantronic" class="sec_hardware__device">
+					</div>
 					<h3 class="sec_hardware__hdr item_card__hdr">Scantronic 2.5</h3>
 					<p class="sec_hardware__descr item_card__descr">Мультимарочный сканер расширенный и усовершенствованной до версии pro под легковые и грузовые автомобили с постоянным обновлением, с функцией адаптации разных систем.</p>
 				</div>
 				<div class="sec_hardware__item item_card">
-					<div class="sec_hardware__img item_card__img"></div>
+					<div class="sec_hardware__img item_card__img">
+						<img src="./img/Delfy150.png" alt="Delfy" class="sec_hardware__device">
+					</div>
 					<h3 class="sec_hardware__hdr item_card__hdr">Delphi Ds150e </h3>
 					<p class="sec_hardware__descr item_card__descr">Я диагностики легковых и грузовых автомобилей преимущества дизельных систем автомобиля.</p>
 				</div>
 				<div class="sec_hardware__item item_card">
-					<div class="sec_hardware__img item_card__img"></div>
+					<div class="sec_hardware__img item_card__img">
+						<img src="./img/BoschKTS.png" alt="BoschKTS" class="sec_hardware__device">
+					</div>
 					<h3 class="sec_hardware__hdr item_card__hdr">Bosch KTS 590 </h3>
 					<p class="sec_hardware__descr item_card__descr">Мультимарочный сканер bosch для диагностики систем коммерческого транспорта</p>
 				</div>
@@ -169,9 +195,9 @@
 
 
 
-		<section class="cv">
-			<div class="sec_container__header moved">Обо мне</div>
-			<div class="cv_text__wrapper moved">
+		<section class="sec_container cv moved">
+			<h2 class="sec_container__header">Обо мне</h2>
+			<div class="cv_text__wrapper">
 				<p class="cv_text">
 					Прекрасный, замечательный, шедевральный, супер-пупер, отличный, толковый, заряженный, профессиональный, опытный, оригинальный, позитивный, активный, компетентный, дипломированный, с большим.... опытом, с прямыми руками, со светлой головой, умный, в меру интеллигентный мужик, чиню тачки.
 					
@@ -186,8 +212,8 @@
 				</p>
 			</div>
 			
-			<div class="cv_photo">
-				<img src="./img/ProfilePhoto.jpg" alt="Profile photo" class="cv_photo__img moved"/>
+			<div class="cv_photo moved">
+				<img src="../img/ProfilePhoto.jpg" alt="Profile photo" class="cv_photo__img"/>
 			</div>
 		</section>
 
@@ -217,7 +243,7 @@
 					<a href="#" class="cont__link" type="phone">+7-911-111-11-11</a>
 				</div>
 				<div class="footer_logo">
-					<img class="logo" src="./img/LOGO.png"></img>
+					<img class="logo" src="../img/LOGO.png"></img>
 				</div>
 				
 				
@@ -235,6 +261,7 @@
 		</section>
 
 	</main>
+
 
 <script src="./js/main.js"></script>
 <script src="./js/slider.js"></script>
