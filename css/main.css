@@ -1,15 +1,15 @@
 /*styles common for all sizez*/
 :root{
-/*       --bgc_top:#33A1FD;
+      --bgc_top:#33A1FD;
       --bgc_btm:#61E8E1;
       --h_txt:#EAC435;
       --phone_txt:#FE5F55;
-      --main_txt:#114B5F; */
-      --bgc_top:#34435e;
+      --main_txt:#114B5F;
+      /* --bgc_top:#34435e;
       --bgc_btm:#002a32;
       --h_txt:#766C7F;
       --phone_txt:#b3af8f;
-      --main_txt:#21a2ec;
+      --main_txt:#21a2ec; */
       --accent_clr:#47FEFE;
       --ff_main:'Inconsolata', monospace;
       --ff_hdr: 'Klee One', cursive;
@@ -27,16 +27,15 @@
       font-weight: 550;
 }
 body{
-      background: linear-gradient(45deg, var(--bgc_btm),var(--bgc_top));
+      background: var(--bgc_btm);
       font-family: var(--ff_main);
       color: var(--main_txt);
 }
 h1,h2{
       color:var(--h_txt);
       text-align: center;
-      margin-bottom: 1em;
+      margin-block: 1.5em 0.5em;
       font-family: var(--ff_hdr);
-      margin-top: 1em;
 }
 .logo{
       display:block;
@@ -63,28 +62,47 @@ h1,h2{
 }
 .button_hover{
       border-radius: 1rem;
-      border: 0.3rem solid var(--bgc_top);
+      border: 1px solid var(--bgc_top);
       
       box-shadow: 5px #1b1a1a inset,
        rgba(255,255,255,0.5) 0px 0px 2rem;
       background-color: var(--main_txt);
 
-       color:var(--h_txt);
-       text-decoration:none;
+      color:var(--h_txt);
+      text-decoration:none;
 
-       display: flex;
-       justify-content: center;
-       align-items:center;
+      display: flex;
+      justify-content: center;
+      align-items:center;
 
-       cursor:pointer;
-       font-weight: bolder;
+      cursor:pointer;
+      font-weight: bolder;
+
+      letter-spacing: .15rem;
+
+      box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+      -6px -6px 10px rgba(255, 255, 255, .5),
+      6px 6px 8px rgba(255, 255, 255, .075),
+      6px 6px 10px rgba(0, 0, 0, .15);
+      transition: .2s ease-in-out;
+
 
       &:hover,
       &:focus{
-            background-color: var(--h_txt);
-            color: var(--main_txt);
+            /* background-color: var(--h_txt);
+            color: var(--main_txt); */
             transition: .25s 0.1s linear;
-            box-shadow: rgba(255,255,255,0.8) 0px 0px 5rem;
+           /*  box-shadow: rgba(255,255,255,0.8) 0px 0px 5rem; */
+           box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+           -2px -2px 4px rgba(255, 255, 255, .4),
+           2px 2px 2px rgba(255, 255, 255, .05),
+           2px 2px 4px rgba(0, 0, 0, .1);
+      }
+      &:active{
+            box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+            inset -2px -2px 4px rgba(255, 255, 255, .5),
+            inset 2px 2px 2px rgba(255, 255, 255, .075),
+            inset 2px 2px 4px rgba(0, 0, 0, .15);
       }
 }
 .sec_service__detailblock{
@@ -93,13 +111,17 @@ h1,h2{
       align-items: start;
       padding-block: 1rem;
       color:var(--main_txt);
-      border-radius: 0.3rem;
+      /* border-radius: 0.3rem; */
       border:1px solid var(--main_txt);
       background-color: rgba(0,0,0,0.2);
       cursor:pointer;
       text-align:justify;
       padding:1rem;
       transition: .4s ease;
+
+      &:not(:first-child){
+            margin-top: 2px ;
+      }
 }
 .sec_service__detailblock[open] .sec_service__detailsum{
       border-bottom: 2px solid var(--main_txt);
@@ -130,7 +152,7 @@ h1,h2{
       color:var(--h_txt);
       background-color: rgba(255,255,255,0.1);
       border:0;
-      border-radius:1rem;
+     /*  border-radius:1rem; */
 
       writing-mode: vertical-rl;
       text-align:center;
@@ -209,9 +231,8 @@ h1,h2{
       background:rgba(0,0,0,0.5);
       width:max-content;
       margin-inline:auto;
-      border-radius: 3rem;
+      border-radius: 0.3rem;
       padding:0.7rem 1.5rem;
-      color:var(--main_txt);
 
       transition: .4s .3s ease-in;
 
@@ -225,8 +246,12 @@ h1,h2{
       align-items: center;
       margin-inline: 1em;
       background-color: rgba(0,0,0,0.1);
-      border-radius: 2rem;
+     /*  border-radius: 2rem; */
       padding:1rem;
+      margin-bottom: 2rem;
+
+      box-shadow: -3px -3px 4px rgba(0,0,0,0.3),
+      3px 3px 4px rgba(255,255,255,0.3);;
 }
 .item_card__hdr{
       display:block;
@@ -234,7 +259,7 @@ h1,h2{
       padding: 1rem 1.5rem;
       width: 25ch;
 
-      border-radius: 1rem;
+     /*  border-radius: 1rem; */
       text-align:center;
       vertical-align: middle;
 
@@ -248,8 +273,8 @@ h1,h2{
       align-items: center;
       margin:auto;
       height:350px;
-      width: 90%;
-      box-shadow: 0px 0px 100px rgba(0,0,0,0.5);
+      width: 95%;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 .phone{
       text-decoration: none;
@@ -373,7 +398,7 @@ h1,h2{
       .sec_heading{
             background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
-            border-radius: 3rem;
+            /* border-radius: 3rem; */
             height:25lvh;
       }
       .sec_heading__slogan{
@@ -393,7 +418,7 @@ h1,h2{
 
             background-color: rgba(200,200,200,0.9);
             padding: 1rem;
-            border-radius: 2.5rem;
+            /* border-radius: 2.5rem; */
 
             opacity:1;
             transition: .4s .5s ease-in;
@@ -405,7 +430,7 @@ h1,h2{
             font-size:1.5rem;
             background-color: rgba(0,0,0,0.2);
             padding: 1.5rem 2rem;
-            border-radius: 1rem;
+            /* border-radius: 1rem; */
             vertical-align:middle;
       }
       .sec_container__header{
@@ -416,7 +441,6 @@ h1,h2{
             display: block;
             width: 3rem;
             height: 4rem;
-            background: red;
             margin-inline: auto;
       }
       .item_card__descr{
@@ -526,12 +550,14 @@ h1,h2{
       .sec_heading{
             background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
-            border-radius: 3rem;
-            height: 50lvh;
+            /* border-radius: 3rem; */
+            height: 60lvh;
             display: flex;
             flex-direction:column;
             align-items:center;
             justify-content: space-around;
+
+            position: relative;
       }
       .sec_container.moved .sec_container__header{
             translateY:-5em;
@@ -549,6 +575,9 @@ h1,h2{
             transition: .4s ease-in;
 
             color: var(--accent_clr);
+
+            padding: 10rem 0;
+            margin-bottom:2rem;
       }
       .sec_container.moved .sec_heading__slogan{
             transition: .4s ease-in;
@@ -564,12 +593,15 @@ h1,h2{
             width: 80%;
             text-align: center;
 
-            background-color: rgba(200,200,200,0.9);
+            background-color: rgba(255,255,255,1);
             padding: 2rem;
-            border-radius: 2.5rem;
+            /* border-radius: 2.5rem; */
 
             opacity:1;
             transition: .4s .5s ease-in;
+
+            position: absolute;
+            bottom: -2rem;
       }
       .sec_container.moved .item_card{
             transition: .4s ease-in;
@@ -670,7 +702,7 @@ h1,h2{
             margin:0.1rem;
             &:hover{
                   transition: 0.2s 0.3s linear;
-                  border-radius:0.8rem;
+             /*      border-radius:0.8rem; */
                   box-shadow: 0px 0px 20px #ffff;
             }
           
