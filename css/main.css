@@ -1,10 +1,29 @@
 /*styles common for all sizez*/
 :root{
-      --bgc_top:#33A1FD;
+
+/*       --bgc_top:#33A1FD;
       --bgc_btm:#61E8E1;
       --h_txt:#EAC435;
       --phone_txt:#FE5F55;
-      --main_txt:#114B5F;
+      --main_txt:#114B5F; */
+
+
+      --bgc_top:#0A0908;
+      --h_txt:;
+      --phone_txt:;
+      --main_txt:#FCF7F8;
+
+      --mrg_par: 1em 1.5em;
+/* 
+      #9CF6F6
+      #FCF7F8
+      #B8B42D
+      #157A6E
+      #2E5266
+      #094074 
+      #0A0908
+ */
+
       /* --bgc_top:#34435e;
       --bgc_btm:#002a32;
       --h_txt:#766C7F;
@@ -17,6 +36,9 @@
       --burg_w: 1.5rem;
 }
 
+html{
+      color-scheme:dark;
+}
 /* normalize */
 *{
       scroll-behavior: smooth;
@@ -27,7 +49,7 @@
       font-weight: 550;
 }
 body{
-      background: var(--bgc_btm);
+      background: var(--bgc_top);
       font-family: var(--ff_main);
       color: var(--main_txt);
 }
@@ -68,7 +90,7 @@ h1,h2{
        rgba(255,255,255,0.5) 0px 0px 2rem;
       background-color: var(--main_txt);
 
-      color:var(--h_txt);
+      color:var(--bgc_top);
       text-decoration:none;
 
       display: flex;
@@ -111,7 +133,7 @@ h1,h2{
       align-items: start;
       padding-block: 1rem;
       color:var(--main_txt);
-      /* border-radius: 0.3rem; */
+      border-radius: 0.3em;
       border:1px solid var(--main_txt);
       background-color: rgba(0,0,0,0.2);
       cursor:pointer;
@@ -150,7 +172,7 @@ h1,h2{
       top:50%;
 
       color:var(--h_txt);
-      background-color: rgba(255,255,255,0.1);
+      background-color: rgba(255,255,255,0.4);
       border:0;
      /*  border-radius:1rem; */
 
@@ -168,24 +190,21 @@ h1,h2{
 
 
       &.prev{
-            left:0.5em;
+            left:1em;
       }
 
       &.next{
-            right:0.5em;
+            right:1em;
       }
       &:hover{
             transition:0.3s 0.1s ease;
-            background-color: rgba(255,255,255,0.3);
+            /* background-color: rgba(255,255,255,0.3); */
       }
       &.prev:hover{
-            left:0.55rem;
-            transition:0.3s 0.2s ease;
-          
+
       }
       &.next:hover{
-            right:0.55rem;
-            transition:0.3s 0.2s ease;
+
       }
 
 }
@@ -227,7 +246,7 @@ h1,h2{
       text-transform: uppercase;
 }
 .sec_container__header{
-      font-size: 3rem;
+     
       background:rgba(0,0,0,0.5);
       width:max-content;
       margin-inline:auto;
@@ -244,28 +263,36 @@ h1,h2{
       flex-direction:column;
       justify-content:start;
       align-items: center;
-      margin-inline: 1em;
-      background-color: rgba(0,0,0,0.1);
-     /*  border-radius: 2rem; */
+      margin-inline: 0.5rem;
+      background-color: rgba(255,255,255,0.3);
+      border-radius: 0.5em;
       padding:1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
 
       box-shadow: -3px -3px 4px rgba(0,0,0,0.3),
       3px 3px 4px rgba(255,255,255,0.3);;
 }
 .item_card__hdr{
-      display:block;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
       background-color: rgba(0,0,0,0.2);
-      padding: 1rem 1.5rem;
-      width: 25ch;
+
+      width: 80%;
 
      /*  border-radius: 1rem; */
-      text-align:center;
-      vertical-align: middle;
 
+}
+.sec_item__hdr{
+      display:flex;
+      margin-block:auto;
+      text-align: center;
+      padding-inline:0.5rem;
 }
 .item_card__descr{
       text-align: center;
+      padding:0.8rem;
 }
 .gmap{
       display: flex;
@@ -292,9 +319,25 @@ h1,h2{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* styles for phone */
 @container main (width < 950px){ 
-
+      .wrapper_main{
+            position:relative;
+      }
       /* hamburger menu */
       .burger{
             display:flex;
@@ -304,8 +347,10 @@ h1,h2{
 
             height: 3rem;
             width: 3rem;
-            margin-right: 1rem;
-            margin-left:auto;
+
+            position:absolute;
+            top:1.3rem;
+            right:0.3rem;
       }
       .burger_line{
             display:block;
@@ -351,23 +396,30 @@ h1,h2{
             background-color: red;
       }
       .hidden{
-            display:none;
+            transform: translateX(-300%);
+            opacity:0;
+            transition: .3s .1s ease-in-out;
       }
-      .burger.active .main_nav{
+      .header_nav {
             position:absolute;
-            bottom:0;
-            width: 100lvw;
             z-index:9999;
-            background-color: linear-gradient(var(--bg_top),var(--bg_btm));
+            top:2rem;
+            bottom:0;
+            left:0;
+            right:0;
+            height: calc(100lvh-3rem);
+            background-color: var(--bg_top);
             display:flex;
             flex-direction:column;
             justify-content: space-around;
             align-items: center;
 
-            margin-inline: 3rem;
+            opacity:1;
+            transition: .3s .1s ease-in-out;
+            margin: 2em 4em;
       }
-      .burger.active .main_nav__item{
-            margin-left: 3rem;
+      .main_nav__item{
+            height: 10svh;
       }
       .fixed{
             overflow: hidden;
@@ -375,10 +427,7 @@ h1,h2{
       }
 
 
-      /* */
-      .logo{
 
-      }
       .header{
             position: sticky;
             top: 0;
@@ -387,23 +436,36 @@ h1,h2{
 
             z-index: 5;
             display:flex;
-            flex-wrap: wrap;
             align-items: center;
             border-bottom: 1px solid var(--bgc_btm);
 
-            width:100lvw;
-            transform: translateX(-5%);
+            width:95vw;
+            margin-inline: auto;
       }
-
+      .logo{
+            display: flex;
+            max-width: 8rem;
+      }
+      ..cont_cont{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+      }
+      .cont__link{
+            text-decoration:none;
+            color: var(--main_txt);
+            text-align:center;
+      }
       .sec_heading{
             background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
             /* border-radius: 3rem; */
-            height:25lvh;
+            height:35lvh;
+            margin-bottom:10rem;
       }
       .sec_heading__slogan{
             font-size: 3rem;
-            padding-block: 1rem;
+            /* padding-block: 1em; */
             color:var(--accent_clr);
       }
       .sec_heading__par{
@@ -426,22 +488,29 @@ h1,h2{
       .sec_container:not(:first-child){
             margin-top: 2em;
       }
-      .item_card__hdr{
-            font-size:1.5rem;
-            background-color: rgba(0,0,0,0.2);
-            padding: 1.5rem 2rem;
-            /* border-radius: 1rem; */
-            vertical-align:middle;
-      }
       .sec_container__header{
+            font-size: 2rem;
             margin-bottom: 1em;
             display:block;
+            background-color: rgba(255,255,255,0.1);
+      }
+
+      .item_card__hdr{
+            background-color: rgba(0,0,0,0.2);
+            padding: 1.5rem 2rem;
+            vertical-align:middle;
+            margin-block: 1em;
+      }
+      .sec_wrapper{
+            margin-block:2rem;
       }
       .item_card__img{
             display: block;
-            width: 3rem;
-            height: 4rem;
-            margin-inline: auto;
+      }
+      .item_card_icon{
+            display: block;
+            height: 8rem;
+            margin: 1rem auto;
       }
       .item_card__descr{
             text-align: justify;
@@ -451,6 +520,22 @@ h1,h2{
       }
       .main_nav:nth-child(2) > .main_nav__item{
             border-bottom: 3px solid red /* var(--bgc_btm) */;
+      }
+      .sec_prefer__slider{
+            max-height:20rem;
+            object-fit: contain;
+      }
+      .sec_prefer__par{
+            margin: var(--mrg_par);
+      }
+      .sec_hardware__par{
+            margin: var(--mrg_par);
+      }
+      .cv_text{
+            margin:var(--mrg_par);
+      }
+      .cv_photo__img{
+            max-width:100%;
       }
       .sec_contacts__map{
             height: 100%;
@@ -467,17 +552,51 @@ h1,h2{
       .footer{
             padding-bottom: 3rem;
       }
+      .footer_logo{
+            display: flex;
+            justify-content: center;
+      }
       .footer_smm{
             display: flex;
             justify-content: space-around;
             margin-block: 1rem;
+            justify-content: center;
       }
       .footer_smm__link{
             display:flex;
             padding: 1em;
+            margin: 1rem ;
+
+            width: 10ch;
            
       }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -503,7 +622,7 @@ h1,h2{
             display: flex;
             justify-content: center;
             &:hover{
-                  text-shadow:0px 0px 6px rgba(255,255,255,0.8);
+                  text-shadow:0px 0px 9px rgba(255,255,255,1);
             }
       }
       .header_nav{
@@ -532,6 +651,11 @@ h1,h2{
             grid-template-columns: repeat(3,1fr);
             justify-content: center;
       }
+      .item_card__hdr{
+            height: 4.5rem;
+            vertical-align:middle;
+            border-radius:0.3rem;
+      }
       .sec_par{
             width: max(5rem,80%);
             margin-inline:auto;
@@ -540,7 +664,6 @@ h1,h2{
       .item_card__img{
       }
       .item_card__hdr{
-            display:block;
             margin-block: 1.5rem;
       }
       .item_card__descr{
@@ -549,6 +672,7 @@ h1,h2{
       }
       .sec_heading{
             background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
+            
             color: var(--h_txt);
             /* border-radius: 3rem; */
             height: 60lvh;
@@ -558,6 +682,9 @@ h1,h2{
             justify-content: space-around;
 
             position: relative;
+      }
+      .sec_container__header{
+            font-size: 3rem;
       }
       .sec_container.moved .sec_container__header{
             translateY:-5em;
@@ -576,8 +703,11 @@ h1,h2{
 
             color: var(--accent_clr);
 
-            padding: 10rem 0;
+            padding: 1em 1.5em;
+            border-radius: 0.2em;
             margin-bottom:2rem;
+
+            background-color: rgba(0,0,0,0.3);
       }
       .sec_container.moved .sec_heading__slogan{
             transition: .4s ease-in;
@@ -589,13 +719,13 @@ h1,h2{
             font-size: 1rem;
             font-weight: 600;
 
-            color: var(--main_txt); 
+            color: var(--bgc_top); 
             width: 80%;
             text-align: center;
 
             background-color: rgba(255,255,255,1);
             padding: 2rem;
-            /* border-radius: 2.5rem; */
+            border-radius: 0.3em;
 
             opacity:1;
             transition: .4s .5s ease-in;
