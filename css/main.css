@@ -36,9 +36,6 @@
       --burg_w: 1.5rem;
 }
 
-html{
-      color-scheme:dark;
-}
 /* normalize */
 *{
       scroll-behavior: smooth;
@@ -152,7 +149,6 @@ h1,h2{
 }
 .sec_service__detailsum{
       color:var(--main_txt);
-
       cursor:pointer;
 }
 .sec_prefer__slider{
@@ -229,9 +225,9 @@ h1,h2{
       }
 }
 
-.slider_img__prev{
-      
-}
+      /* .slider_img__prev{
+            
+      } */
 .slider_img__center{
       position:absolute;
       top:0;
@@ -336,7 +332,8 @@ h1,h2{
 /* styles for phone */
 @container main (width < 950px){ 
       .wrapper_main{
-            position:relative;
+            position: relative;
+
       }
       /* hamburger menu */
       .burger{
@@ -401,13 +398,6 @@ h1,h2{
             transition: .3s .1s ease-in-out;
       }
       .header_nav {
-            position:absolute;
-            z-index:9999;
-            top:2rem;
-            bottom:0;
-            left:0;
-            right:0;
-            height: calc(100lvh-3rem);
             background-color: var(--bg_top);
             display:flex;
             flex-direction:column;
@@ -416,11 +406,20 @@ h1,h2{
 
             opacity:1;
             transition: .3s .1s ease-in-out;
-            margin: 2em 4em;
       }
       .main_nav__item{
-            height: 10svh;
+
       }
+      .main_nav_item:nth-child(1){
+            transition: .3s .1s ease-in-out;
+      }
+      .main_nav_item:nth-child(1){
+            transition: .3s .3s ease-in-out;
+      }
+      .main_nav_item:nth-child(1){
+            transition: .3s .5s ease-in-out;
+      }
+      
       .fixed{
             overflow: hidden;
             background-color: red;
@@ -460,7 +459,7 @@ h1,h2{
             background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
             /* border-radius: 3rem; */
-            height:35lvh;
+            height:45lvh;
             margin-bottom:10rem;
       }
       .sec_heading__slogan{
@@ -517,6 +516,12 @@ h1,h2{
             margin-inline: auto;
             margin-bottom: 1rem;
             display: block;
+      }
+
+      .sec_par{
+            width: max(5rem,80%);
+            margin-inline:auto;
+            margin-block: 1rem;
       }
       .main_nav:nth-child(2) > .main_nav__item{
             border-bottom: 3px solid red /* var(--bgc_btm) */;
@@ -655,11 +660,6 @@ h1,h2{
             height: 4.5rem;
             vertical-align:middle;
             border-radius:0.3rem;
-      }
-      .sec_par{
-            width: max(5rem,80%);
-            margin-inline:auto;
-            margin-block: 1rem;
       }
       .item_card__img{
       }
