@@ -50,6 +50,13 @@ body{
       font-family: var(--ff_main);
       color: var(--main_txt);
 }
+
+.wrapper_main{
+      container: main/inline-size;
+      margin-inline: auto;
+      width: calc(min(90%,70rem));
+}
+
 h1,h2{
       color:var(--h_txt);
       text-align: center;
@@ -70,11 +77,7 @@ h1,h2{
 .cont_cont>*{
       display:block;
 }
-.wrapper_main{
-      container: main/inline-size;
-      margin-inline: auto;
-      width: calc(min(90%,70rem));
-}
+ 
 .main_nav{
       color:var(--h_txt);
       list-style: none;
@@ -99,8 +102,8 @@ h1,h2{
 
       letter-spacing: .15rem;
 
-      box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
-      -6px -6px 10px rgba(255, 255, 255, .5),
+      box-shadow: -3px -3px 14px rgba(255, 255, 255, .7),
+      -3px -3px 10px rgba(255, 255, 255, .5),
       6px 6px 8px rgba(255, 255, 255, .075),
       6px 6px 10px rgba(0, 0, 0, .15);
       transition: .2s ease-in-out;
@@ -260,7 +263,7 @@ h1,h2{
       justify-content:start;
       align-items: center;
       margin-inline: 0.5rem;
-      background-color: rgba(255,255,255,0.8);
+      background-color: rgba(255,255,255,0.3);
       border-radius: 0.5em;
       padding:1rem;
       margin-bottom: 1rem;
@@ -332,9 +335,13 @@ h1,h2{
 /* styles for phone */
 @container main (width < 950px){ 
       .wrapper_main{
-            position: relative;
-
+            width:90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
       }
+      
       /* hamburger menu */
       .burger{
             display:flex;
@@ -392,23 +399,65 @@ h1,h2{
             bottom: 0;
             background-color: red;
       }
+      .burger.active .header_nav{
+      }
       .hidden{
             transform: translateX(-300%);
             opacity:0;
             transition: .3s .1s ease-in-out;
       }
+      .header{
+            position: sticky;
+            top: 0;
+
+            background-color: var(--bgc_top);
+
+            z-index: 5;
+            display:flex;
+            align-items: center;
+            border-bottom: 1px solid var(--bgc_btm);
+
+            margin-inline: auto;
+      }
       .header_nav {
+            position: absolute;
+            inset:0;
+/* 
+            transform:translateX(-200%);
+            opacity:0; */
+
+
             background-color: var(--bg_top);
             display:flex;
             flex-direction:column;
             justify-content: space-around;
             align-items: center;
 
-            opacity:1;
             transition: .3s .1s ease-in-out;
       }
-      .main_nav__item{
+      .main_nav__mobile{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: space-around;
 
+            position: absolute;
+            z-index:9999;
+            left:0;
+            right:0;
+            bottom: 0;
+
+            background-color:red;
+      }
+      .main_nav__mobile>*{
+           
+            display: block;
+            font-size: 3rem;
+            text-decoration:none;
+
+            color:var(--main__txt);
+            text-align:center;
+            margin-bottom: 2rem;
       }
       .main_nav_item:nth-child(1){
             transition: .3s .1s ease-in-out;
@@ -427,20 +476,6 @@ h1,h2{
 
 
 
-      .header{
-            position: sticky;
-            top: 0;
-
-            background-color: var(--bgc_top);
-
-            z-index: 5;
-            display:flex;
-            align-items: center;
-            border-bottom: 1px solid var(--bgc_btm);
-
-            width:95vw;
-            margin-inline: auto;
-      }
       .logo{
             display: flex;
             max-width: 8rem;
@@ -456,7 +491,7 @@ h1,h2{
             text-align:center;
       }
       .sec_heading{
-            background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
+            background: center / cover no-repeat url('./img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
             /* border-radius: 3rem; */
             height:45lvh;
@@ -536,11 +571,19 @@ h1,h2{
       .sec_hardware__par{
             margin: var(--mrg_par);
       }
+      .cv{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+      }
       .cv_text{
             margin:var(--mrg_par);
       }
       .cv_photo__img{
             max-width:100%;
+            display:block;
+            margin-inline:auto;
       }
       .sec_contacts__map{
             height: 100%;
@@ -642,6 +685,9 @@ h1,h2{
             display: block;
             padding: 1rem 1.5rem;
       }
+      .main_nav__mobile{
+            display: none;
+      }
 
       section{
 /*             display:grid;
@@ -671,7 +717,7 @@ h1,h2{
             font-weight:300;
       }
       .sec_heading{
-            background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
+            background: center / cover no-repeat url('./img/ms-48.ru_elektrika_02.jpg');
             
             color: var(--h_txt);
             /* border-radius: 3rem; */
