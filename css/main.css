@@ -491,7 +491,7 @@ h1,h2{
             text-align:center;
       }
       .sec_heading{
-            background: center / cover no-repeat url('./img/ms-48.ru_elektrika_02.jpg');
+            background: center / cover no-repeat url('../img/ms-48.ru_elektrika_02.jpg');
             color: var(--h_txt);
             /* border-radius: 3rem; */
             height:45lvh;
